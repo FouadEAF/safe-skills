@@ -76,6 +76,42 @@ body {
   font-family: var(--default-font);
 }
 
+/* Global text justification */
+p,
+.content p,
+.member-info p,
+.service-item p,
+.steps-content p,
+.modal-body p {
+  text-align: justify;
+}
+
+/* Keep section subtitles centered */
+.section-title p,
+.cta p,
+.testimonials .section-title p,
+.blog .section-title p {
+  text-align: center !important;
+}
+
+/* Keep hero section left-aligned */
+.hero p {
+  text-align: left !important;
+}
+
+/* Keep footer text properly aligned */
+.footer p,
+.call-to-action p,
+.footer-about p,
+.footer-contact p {
+  text-align: left !important;
+}
+
+.footer .credits,
+.copyright p {
+  text-align: center !important;
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;
