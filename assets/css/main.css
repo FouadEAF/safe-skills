@@ -203,10 +203,10 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 160px;
   margin-right: 8px;
-  width: 60px;
-  height: 60px;
+  width: 160px;
+  height: 100px;
 }
 
 .header .logo h1 {
@@ -315,7 +315,8 @@ h6 {
   .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    /* color: var(--accent-color); */
+    color: var(--primary);
   }
 
   .navmenu .dropdown ul {
