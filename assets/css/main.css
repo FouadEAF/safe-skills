@@ -60,6 +60,10 @@
   --heading-color: #ffffff;
   --surface-color: #4668a2;
   --contrast-color: #ffffff;
+  background-image: url('../img/background-hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Smooth scroll */
@@ -910,6 +914,7 @@ section,
   padding: 120px 0 60px 0;
   display: flex;
   align-items: center;
+
 }
 
 .hero h1 {
