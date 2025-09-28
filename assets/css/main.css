@@ -1008,6 +1008,12 @@ section,
   }
 }
 
+@media (max-width: 768px) {
+  .hero-right-column {
+    display: none;
+  }
+}
+
 @media (max-width: 640px) {
   .hero h1 {
     font-size: 28px;
@@ -1031,7 +1037,7 @@ section,
   }
 
   .hero-right-column {
-    min-height: 40vh;
+    display: none;
   }
 }
 
