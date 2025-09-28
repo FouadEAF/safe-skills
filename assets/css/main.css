@@ -60,7 +60,7 @@
   --heading-color: #ffffff;
   --surface-color: #4668a2;
   --contrast-color: #ffffff;
-  background-image: url('../img/background-hero.webp');
+  background-image: url("../img/background-hero.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -918,11 +918,11 @@ section,
 
 /* Hero Left Column - Dark Background */
 .hero-left-column {
-  background-color: #37517e;
-  /*background-image: url('../img/background-hero.webp');
+  /*background-color: #37517e;*/
+  background-image: url("../img/left-hero.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;*/
+  background-repeat: no-repeat;
   min-height: 80vh;
   padding: 120px 60px 60px 60px;
 }
@@ -933,7 +933,7 @@ section,
 
 /* Hero Right Column - Image Background */
 .hero-right-column {
-  background-image: url('../img/background-hero.webp');
+  background-image: url("../img/right-hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
