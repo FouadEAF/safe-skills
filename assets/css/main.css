@@ -916,6 +916,20 @@ section,
   align-items: center;
 }
 
+/* Utility to use a single background image for the entire hero section */
+.background-hero {
+  background-image: url("../img/background-hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* When using .background-hero, make hero columns transparent */
+.background-hero .hero-left-column,
+.background-hero .hero-right-column {
+  background: none !important;
+}
+
 /* Hero Left Column - Dark Background */
 .hero-left-column {
   /*background-color: #37517e;*/
