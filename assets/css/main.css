@@ -914,14 +914,128 @@ section,
   padding: 0;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
-/* Utility to use a single background image for the entire hero section */
-.background-hero {
+/* Single Hero Container with Background Image */
+.hero-container {
+  width: 100%;
+  height: 100%;
+  min-height: 80vh;
   background-image: url("../img/background-hero.webp");
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
+  background-attachment: scroll;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero Content */
+.hero-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 40px 20px;
+  z-index: 1;
+  position: relative;
+}
+
+/* Hero Content Styling */
+.hero-content h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #ffffff;
+}
+
+.hero-content p {
+  color: #f83;
+  margin: 5px 0 30px 0;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.hero .btn-get-started {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px 12px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.hero .btn-get-started:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+.hero .btn-watch-video {
+  font-size: 16px;
+  transition: 0.5s;
+  margin-left: 25px;
+  color: var(--contrast-color);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.hero .btn-watch-video i {
+  color: var(--contrast-color);
+  font-size: 32px;
+  transition: 0.3s;
+  line-height: 0;
+  margin-right: 8px;
+}
+
+.hero .btn-watch-video:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.hero .btn-watch-video:hover i {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Mobile optimizations for hero container */
+@media (max-width: 768px) {
+  .hero-container {
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero-container {
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+  }
 }
 
 /* When using .background-hero, make hero columns transparent */
@@ -932,13 +1046,29 @@ section,
 
 /* Hero Left Column - Dark Background */
 .hero-left-column {
-  /*background-color: #37517e;*/
-  background-image: url("../img/left-hero.jpg");
+  background: linear-gradient(
+    135deg,
+    rgba(37, 51, 85, 0.95),
+    rgba(55, 81, 126, 0.9)
+  );
+  min-height: 80vh;
+  padding: 120px 60px 60px 60px;
+  position: relative;
+}
+
+.hero-left-column::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../img/background-hero.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 80vh;
-  padding: 120px 60px 60px 60px;
+  opacity: 0.3;
+  z-index: -1;
 }
 
 .hero-content {
@@ -947,11 +1077,35 @@ section,
 
 /* Hero Right Column - Image Background */
 .hero-right-column {
-  background-image: url("../img/right-hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(
+    135deg,
+    rgba(252, 124, 40, 0.1),
+    rgba(46, 196, 182, 0.1)
+  );
   min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover img {
+  transform: scale(1.05);
 }
 
 .hero h1 {
@@ -992,8 +1146,11 @@ section,
   font-size: 16px;
   transition: 0.5s;
   margin-left: 25px;
-  color: var(--default-color);
+  color: var(--contrast-color);
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .hero .btn-watch-video i {
@@ -1006,10 +1163,19 @@ section,
 
 .hero .btn-watch-video:hover {
   color: var(--accent-color);
+  text-decoration: none;
 }
 
 .hero .btn-watch-video:hover i {
-  color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .hero .animated {
@@ -1020,11 +1186,25 @@ section,
   .hero-left-column {
     padding: 100px 40px 50px 40px;
   }
+
+  .hero-right-column {
+    padding: 40px;
+  }
 }
 
 @media (max-width: 768px) {
   .hero-right-column {
     display: none;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .hero .btn-watch-video {
+    margin-left: 0;
   }
 }
 
@@ -1045,13 +1225,33 @@ section,
     font-size: 13px;
   }
 
-  .hero-left-column {
-    padding: 80px 30px 40px 30px;
+  .hero-container {
     min-height: 60vh;
+    padding: 20px;
   }
 
-  .hero-right-column {
-    display: none;
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .hero .btn-watch-video {
+    margin-left: 0;
+  }
+
+  /* Enhanced mobile background optimization for container */
+  .hero-container {
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  /* Mobile content adjustments */
+  .hero-content {
+    text-align: center;
+    padding: 20px 15px;
+    max-width: 100%;
   }
 }
 
